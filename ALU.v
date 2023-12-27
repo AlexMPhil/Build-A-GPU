@@ -1,10 +1,10 @@
 //ctrl refers to the instruction parameter it refers, based in the 3 line signals from the bit alu logic
 //A and B are inputs while Res is the output with numerous status flags
-module ALU(ctrl, A, B, Res, isZero, isNegative, isEqual, isGT, isLT);
+module ALU(ctrl, A, B, Res, ZF, NF, EF, GF, LF);
 input wire [3:0] ctrl;
 input wire signed [31:0] A, B;
 output reg [31:0] Res;
-output wire isZero, isNegative, isEqual, isGT, isLT;
+output wire ZF, NF, EF, GF, LF;
 assign isNegative = 0;
 assign isZero = (C == 0) ? 1: 0;
 assign isEqual = (A == B) ? 1 : 0;
@@ -20,8 +20,8 @@ parameter   Add = 4'd0,
             NAND = 4'd7,
             NOT = 4'd8,
             NOR = 4'd9;
-always @ (control, A, B) begin
-    case(control)
+always @ (ctrl, A, B) begin
+    case(ctrl)
     add: begin
         C = A + B;
     end
