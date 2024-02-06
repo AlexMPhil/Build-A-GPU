@@ -1,5 +1,5 @@
-module Mux_Y(yCF, yCD, yRD, yRD, yLD, yIDLE, CLK, SEL, yOut);
-input wire [8:0] yCF, yCD, yRD, yRD, yLD, yIDLE;
+module Mux_Y(yCF, yCD, yRF, yRD, yLD, yIDLE, CLK, SEL, yOut);
+input wire [8:0] yCF, yCD, yRF, yRD, yLD, yIDLE;
 input wire CLK;
 input wire [3:0] SEL;
 output wire [8:0] yOut;
