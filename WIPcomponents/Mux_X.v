@@ -1,5 +1,5 @@
-module Mux_X(xCF, xCD, xRD, xRD, xLD, xIDLE, CLK, SEL, xOut);
-input wire [8:0] xCF, xCD, xRD, xRD, xLD, xIDLE;
+module Mux_X(xCF, xCD, xRF, xRD, xLD, xIDLE, CLK, SEL, xOut);
+input wire [8:0] xCF, xCD, xRF, xRD, xLD, xIDLE;
 input wire CLK;
 input wire [3:0] SEL;
 output wire [8:0] xOut;
